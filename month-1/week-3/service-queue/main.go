@@ -9,12 +9,16 @@ func addService(queue []string, name string) []string {
 	if name != "" {
 		return append(queue, name)
 	} else {
-		return nil
+		return queue // If nil or anything it will overwrite the old data in queue so just return queue
 	}
 }
 
 func removeFirst(queue []string) ([]string, string, bool) {
-	return queue[1:], queue[0], true
+	if len(queue) > 1 {
+		return queue[1:], queue[0], true // The true here means was it able to remove the first and send rest
+	} else {
+		return queue, queue[0], false // False here means there was only one element
+	}
 }
 
 func contains(queue []string, name string) bool {
