@@ -13,11 +13,11 @@ func addService(queue []string, name string) []string {
 	}
 }
 
-func removeFirst(queue []string) ([]string, string, bool) {
-	if len(queue) > 1 {
-		return queue[1:], queue[0], true // The true here means was it able to remove the first and send rest
+func removeFirst(queue []string) ([]string, string) {
+	if len(queue) >= 1 {
+		return queue[1:], queue[0]
 	} else {
-		return queue, queue[0], false // False here means there was only one element
+		return queue, ""
 	}
 }
 
@@ -43,7 +43,7 @@ func main() {
 	}
 	queue = addService(queue, "notifications-api")
 	fmt.Println("Added Notification:", queue)
-	queue, _, _ = removeFirst(queue)
+	queue, _ = removeFirst(queue)
 	fmt.Println("Removed first", queue)
 	fmt.Println("Does `inventory-api` exist: ", contains(queue, "inventory-api"))
 	fmt.Println("Removing `users-api`", removeService(queue, "users-api"))
