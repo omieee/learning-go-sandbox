@@ -16,7 +16,7 @@ type Adderess struct {
 	Pincode        int    `json:"piccode"`
 }
 
-func (stud *Student) UpdateProUpdateStudentDetail() {
+func (stud *Student) UpdateStudentDetail() {
 	stud.Name = "John Doe"
 	stud.Class = "Class 4"
 	stud.RollNumber = 23
@@ -26,6 +26,6 @@ func (stud *Student) UpdateProUpdateStudentDetail() {
 
 func main() {
 	stu := Student{}
-	stu.UpdateProUpdateStudentDetail()
+	stu.UpdateStudentDetail()
 	fmt.Println("Student Data: ", stu)
 }
