@@ -19,6 +19,7 @@ func HelloNameWithGreet(name string, language string) string {
 		return "Hola! " + name
 	case "french":
 		return "Bonjour! " + name
+	default:
+		return englishGreet + name
 	}
-	return englishGreet + name
 }
