@@ -1,9 +1,5 @@
 package helloworld
 
-import (
-	"fmt"
-)
-
 func Hello() string {
 	return "Hello!, World!"
 }
@@ -25,10 +21,4 @@ func HelloNameWithGreet(name string, language string) string {
 		return "Bonjour! " + name
 	}
 	return englishGreet + name
-}
-
-func main() {
-	fmt.Println(Hello())
-	fmt.Println(HelloName("Om Shanker"))
-	fmt.Println(HelloNameWithGreet("Bauua", "french"))
 }

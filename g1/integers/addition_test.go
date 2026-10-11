@@ -1,5 +1,5 @@
 // calc_test.go
-package addition
+package integers
 
 import (
 	"fmt"
