@@ -5,24 +5,33 @@ import (
 	"testing"
 )
 
-func TestRepeat(t *testing.T) {
-	got := Repeat("a")
-	want := "aaaaa"
+func TestRepeatSuccess(t *testing.T) {
+	got := Repeat("a", 3)
+	want := "aaa"
 
 	if want != got {
 		t.Errorf("wanted %q got %q", want, got)
 	}
 }
 
+func TestRepeatFail(t *testing.T) {
+	got := Repeat("a", 3)
+	want := "aaaa"
+
+	if want == got {
+		t.Errorf("wanted %q got %q", want, got)
+	}
+}
+
 func BenchmarkRepeat(b *testing.B) {
 	for b.Loop() {
-		Repeat("a")
+		Repeat("a", 3)
 	}
 }
 
 func ExampleRepeat() {
-	got := Repeat("a")
+	got := Repeat("a", 3)
 	fmt.Println(got)
 
-	//Output: aaaaa
+	//Output: aaa
 }

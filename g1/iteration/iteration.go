@@ -4,10 +4,9 @@ import (
 	"strings"
 )
 
-func Repeat(ch string) string {
+func Repeat(ch string, times int) string {
 	var repeated strings.Builder
-	countTimes := 5
-	for i := 0; i < countTimes; i++ {
+	for i := 0; i < times; i++ {
 		repeated.WriteString(ch)
 	}
 	return repeated.String()
