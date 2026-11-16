@@ -9,9 +9,9 @@ import "fmt"
 ///
 
 func ex2() (int, float64) {
-	const value int = 10
+	const value = 10
 	var i int = value
-	var f float64 = float64(value)
+	var f float64 = value
 	fmt.Println("I:", i)
 	fmt.Println("F:", f)
 	return i, f
